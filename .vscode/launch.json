@@ -1,7 +1,33 @@
-#include <stdio.h>
+ #include  <stdio.h>
 #include <string.h>
 
 struct Carta {
+    "configurations": [
+    {
+        "name": Carta 1 "(gdb) Iniciar",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "insira o nome do programa, por exemplo ${workspaceFolder}/a.out",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Habilitar a reformatação automática para gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Definir Tipo de Desmontagem como Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            }
+        ]
+    }
+    ]
     char estado[3];
     char codigo[4];
     char nomeCidade[50];
@@ -90,7 +116,7 @@ int main() {
                 printf("Resultado: Empate!\n");
             break;
 
-        case 5:
+         case 5:
             printf("Comparacao (PIB per capita)\n\n");
             printf("Carta 1 - %s (%s): %.2f reais/habitante\n", carta1.nomeCidade, carta1.estado, carta1.pibPerCapita);
             printf("Carta 2 - %s (%s): %.2f reais/habitante\n\n", carta2.nomeCidade, carta2.estado, carta2.pibPerCapita);
@@ -107,5 +133,6 @@ int main() {
             printf("Opcao invalida! Escolha um numero de 1 a 5.\n");
     }
 
-    return 0;
+    return 0; 
 }
+
